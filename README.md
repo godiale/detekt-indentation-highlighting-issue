@@ -1,18 +1,28 @@
-<!-- The bug you're experiencing might have already be reported! -->
-<!-- Please search in the [issues](https://github.com/detekt/detekt/issues) before creating one. -->
-
 ## Expected Behavior
 Intellij IDEA highlights a line (or first symbol in a line), where **Indentation** issue is found.
 Hoovering mouse over highlighted area shows tooltip with the issue description.
 
-Below is the example of correct highlighting and issue description from **SpacingAroundParens** rule.
+Below is screenshot with correct highlighting and issue description from **SpacingAroundParens** rule.
+![Correct spacing around parens highlighting](docs/correct_spacing_highlighting.png)
 
 ## Observed Behavior
-<!-- Tell us what happens instead of the expected behavior -->
+Whole file content is highlighted, making it impossible to find violation (including other types of rules).
+Hoovering mouse over random place of file shows correct violation description, but its impossible to find its location.
+
+Below is screenshot with the problem from testing project to reproduce the issue.
+![Incorrect indentation highlighting](docs/incorrect_indentation_highlighting.png)
 
 ## Steps to Reproduce
-<!-- Provide a link to a live example, or an unambiguous set of steps to -->
-<!-- reproduce this bug. Include code to reproduce, if relevant -->
+- Download and build test project: https://github.com/godiale/detekt-indentation-highlighting-issue
+- Install detekt IntelliJ plugin and configure it as below:
+    - Enable Detekt = Y
+    - Enable Formatting rules = Y
+    - Build upon the default configuration = N
+    - Enable all experimental rules = N
+    - Treat detek findings as errors = N
+    - Configuration file = https://github.com/godiale/detekt-indentation-highlighting-issue/blob/main/config/detekt.yml
+    - Baseline File = <empty>
+    - Plugin jars = <empty>
 
 ## Context
 <!-- How has this issue affected you? What are you trying to accomplish? -->
