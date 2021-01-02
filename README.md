@@ -24,6 +24,8 @@ Below is screenshot with the problem from testing project to reproduce the issue
     - Baseline File = <empty>
     - Plugin jars = <empty>
 
+![Idea detekt plugin settings](docs/idea_settings.png)
+
 ## Context
 <!-- How has this issue affected you? What are you trying to accomplish? -->
 <!-- Providing context helps us come up with a solution that is most useful in the real world -->
