@@ -2,7 +2,10 @@
 <!-- Please search in the [issues](https://github.com/detekt/detekt/issues) before creating one. -->
 
 ## Expected Behavior
-Intellij IDEA highlights a line (or first symbol in the line), where indentation issue is found.
+Intellij IDEA highlights a line (or first symbol in a line), where **Indentation** issue is found.
+Hoovering mouse over highlighted area shows tooltip with the issue description.
+
+Below is the example of correct highlighting and issue description from **SpacingAroundParens** rule.
 
 ## Observed Behavior
 <!-- Tell us what happens instead of the expected behavior -->
@@ -18,6 +21,7 @@ Intellij IDEA highlights a line (or first symbol in the line), where indentation
 ## Your Environment
 <!-- Include as many relevant details about the environment you experienced the bug in -->
 * Version of detekt used: 1.15.0
+* Version of detekt IntelliJ plugin used: 1.6.1
 * Version of Gradle used (if applicable): 6.7
 * Operating System and version: Windows 10 Pro
 * Version of IntelliJ IDEA: Community 2020.3.1 Build #IC-203.6682.168, built on December 29, 2020
