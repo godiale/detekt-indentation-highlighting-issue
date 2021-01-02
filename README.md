@@ -5,10 +5,15 @@
 Intellij IDEA highlights a line (or first symbol in a line), where **Indentation** issue is found.
 Hoovering mouse over highlighted area shows tooltip with the issue description.
 
-Below is the example of correct highlighting and issue description from **SpacingAroundParens** rule.
+Below is screenshot with correct highlighting and issue description from **SpacingAroundParens** rule.
+![Correct spacing around parens highlighting](docs/correct_spacing_highlighting.png)
 
 ## Observed Behavior
-<!-- Tell us what happens instead of the expected behavior -->
+Whole file content is highlighted, making it impossible to find violation (including other types of rules).
+Hoovering mouse over random place of file shows correct violation description, but its impossible to find its location.
+
+Below is screenshot with the problem from testing project to reproduce the issue.
+![Incorrect indentation highlighting](docs/incorrect_indentation_highlighting.png)
 
 ## Steps to Reproduce
 <!-- Provide a link to a live example, or an unambiguous set of steps to -->
