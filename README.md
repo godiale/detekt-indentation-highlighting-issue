@@ -1,3 +1,5 @@
+# Incorrect reporting of Indentation issues for IntelliJ highlighting
+
 ## Expected Behavior
 Intellij IDEA highlights a line (or first symbol in a line), where **Indentation** issue is found.
 Hoovering mouse over highlighted area shows tooltip with the issue description.
