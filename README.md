@@ -38,7 +38,7 @@ I built detekt itself to investigate and found that ```location``` in [**Formatt
             )
 ```
 ```SourceLocation``` is created with correct line and column is reported as 1.
-Maybe this could be fixed by customizing ```TextLocation``` creation for ```Indentation```, so that only affected line is put to ```TextLocation```?
+Maybe this could be fixed by customizing ```TextLocation``` creation for ```Indentation```, so that only affected line is put to ```TextLocation```, not whole file?
 
 ## Your Environment
 * Version of detekt used: 1.15.0
