@@ -38,6 +38,8 @@ with values (0, number_of_symbols_in_source_file).
                 root.absolutePath().toString()
             )
 ```
+```SourceLocation``` is created with correct line and column is reported as 1.
+Maybe this could be fixed by customizing ```TextLocation``` creation for ```Indentation```, so that only affected line is put to ```TextLocation```?
 
 ## Your Environment
 * Version of detekt used: 1.15.0
