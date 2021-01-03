@@ -30,7 +30,7 @@ Below is screenshot with the problem from testing project to reproduce the issue
 The issue duplicates https://github.com/detekt/detekt-intellij-plugin/issues/105, with more reproduction details.
 However I think placing it to detekt iself is more correct, because seems the problem is not in displaying code smell, but rather in the way how its reported.
 I built detekt itself to investigate and found that ```location``` in [**FormattingRule**](https://github.com/detekt/detekt/blob/v1.15.0/detekt-formatting/src/main/kotlin/io/gitlab/arturbosch/detekt/formatting/FormattingRule.kt#L65) for Indentation is created so that ```TextLocation``` is created
-with values (0, number of symbols in source file).
+with values (0, number_of_symbols_in_source_file).
 ```
             val location = Location(
                 SourceLocation(line, column),
