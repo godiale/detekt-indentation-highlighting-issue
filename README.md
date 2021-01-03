@@ -15,7 +15,16 @@ Below is screenshot with the problem from testing project to reproduce the issue
 ![Incorrect indentation highlighting](docs/incorrect_indentation_highlighting.png)
 
 ## Steps to Reproduce
-- Download and build test project: https://github.com/godiale/detekt-indentation-highlighting-issue
+- Download test project: https://github.com/godiale/detekt-indentation-highlighting-issue
+- Build it with ```./gradlew.bat build```, which will result in following output
+```
+1 kotlin file was analyzed.
+formatting - 10min debt
+        Indentation - [] at C:\Users\godin\Projects\detekt-indentation-highlighting-issue\src\main\kotlin\MainWithFormattingErrors.kt:4:1
+        SpacingAroundParens - [] at C:\Users\godin\Projects\detekt-indentation-highlighting-issue\src\main\kotlin\MainWithFormattingErrors.kt:5:20
+
+Overall debt: 10min
+```
 - Install detekt IntelliJ plugin and configure it as below:
     - Enable Detekt = Y
     - Enable Formatting rules = Y
@@ -25,8 +34,8 @@ Below is screenshot with the problem from testing project to reproduce the issue
     - Configuration file = https://github.com/godiale/detekt-indentation-highlighting-issue/blob/main/config/detekt.yml
     - Baseline File = <empty>
     - Plugin jars = <empty>
-
 ![Idea detekt plugin settings](docs/idea_settings.png)
+- Open ```MainWithFormattingErrors.kt``` in editor
 
 ## Context
 The issue duplicates [detekt-intellij-plugin#105](https://github.com/detekt/detekt-intellij-plugin/issues/105), with more reproduction details.
