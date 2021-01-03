@@ -27,11 +27,19 @@ Below is screenshot with the problem from testing project to reproduce the issue
 ![Idea detekt plugin settings](docs/idea_settings.png)
 
 ## Context
-<!-- How has this issue affected you? What are you trying to accomplish? -->
-<!-- Providing context helps us come up with a solution that is most useful in the real world -->
+The issue duplicates https://github.com/detekt/detekt-intellij-plugin/issues/105, with more reproduction details.
+However I think placing it to detekt iself is more correct, because seems the problem is not in displaying code smell, but rather in the way how its reported.
+I built detekt itself to investigate and found that ```location``` in [**FormattingRule**](https://github.com/detekt/detekt/blob/v1.15.0/detekt-formatting/src/main/kotlin/io/gitlab/arturbosch/detekt/formatting/FormattingRule.kt#L65) for Indentation is created so that ```TextLocation``` is created
+with values (0, number of symbols in source file).
+```
+            val location = Location(
+                SourceLocation(line, column),
+                TextLocation(node.startOffset, node.psi.endOffset),
+                root.absolutePath().toString()
+            )
+```
 
 ## Your Environment
-<!-- Include as many relevant details about the environment you experienced the bug in -->
 * Version of detekt used: 1.15.0
 * Version of detekt IntelliJ plugin used: 1.6.1
 * Version of Gradle used (if applicable): 6.7
