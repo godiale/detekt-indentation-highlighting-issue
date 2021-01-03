@@ -19,7 +19,7 @@ Below is screenshot with the problem from testing project to reproduce the issue
     - Enable Formatting rules = Y
     - Build upon the default configuration = N
     - Enable all experimental rules = N
-    - Treat detek findings as errors = N
+    - Treat detekt findings as errors = N
     - Configuration file = https://github.com/godiale/detekt-indentation-highlighting-issue/blob/main/config/detekt.yml
     - Baseline File = <empty>
     - Plugin jars = <empty>
@@ -28,7 +28,7 @@ Below is screenshot with the problem from testing project to reproduce the issue
 
 ## Context
 The issue duplicates https://github.com/detekt/detekt-intellij-plugin/issues/105, with more reproduction details.
-However I think placing it to detekt iself is more correct, because seems the problem is not in displaying code smell, but rather in the way how its reported.
+However I think placing it to detekt project is more correct, because seems the problem is not in visualizing code smell, but rather in the way how its reported.
 I built detekt itself to investigate and found that ```location``` in [**FormattingRule**](https://github.com/detekt/detekt/blob/v1.15.0/detekt-formatting/src/main/kotlin/io/gitlab/arturbosch/detekt/formatting/FormattingRule.kt#L65) for Indentation is created with values like ```TextLocation(0, 1165)```where ```node.psi.endOffset``` is equal to index of last character in source file.
 ```
             val location = Location(
